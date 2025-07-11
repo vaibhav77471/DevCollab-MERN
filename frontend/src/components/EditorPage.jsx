@@ -17,7 +17,7 @@ const EditorPage = () => {
       setCode(incomingCode);
     });
 
-    fetch(`http://localhost:5000/api/code/${roomId}`)
+    fetch(`https://devcollab-mern.onrender.com/api/code/${roomId}`)
       .then(res => res.json())
       .then(data => {
         if (data.code) setCode(data.code);
@@ -60,7 +60,7 @@ const EditorPage = () => {
   };
 
   const handleSave = () => {
-    fetch("http://localhost:5000/api/code", {
+    fetch("https://devcollab-mern.onrender.com/api/code", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ roomId, code }),
